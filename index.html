@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>  
+        <button onclick="prompt_clean()">C</button>
+        <section id="prompt" style="border: 1px solid black; text-align: end;">
+                <h1 id="app">0</h1>
+        </section>
+        <section id="numbers">
+            <button class="numbers number_1" onclick="prompt_number(1)">1</button>
+            <button class="numbers number_2" onclick="prompt_number(2)">2</button>
+            <button class="numbers number_3" onclick="prompt_number(3)">3</button>
+            <button class="numbers number_4" onclick="prompt_number(4)">4</button>
+            <button class="numbers number_5" onclick="prompt_number(5)">5</button>
+            <button class="numbers number_6" onclick="prompt_number(6)">6</button>
+            <button class="numbers number_7" onclick="prompt_number(7)">7</button>
+            <button class="numbers number_8" onclick="prompt_number(8)">8</button>
+            <button class="numbers number_9" onclick="prompt_number(9)">9</button>
+            <button class="numbers number_10" onclick="prompt_number(0)">0</button>
+        </section>
+        <section id="operations">
+            <button class="operations" onclick="prompt_operation('soma')" id="soma">+</button>
+            <button class="operations" onclick="prompt_operation('multiplicacao')" id="mutiplicacao">*</button>
+            <button class="operations" onclick="prompt_operation('divisao')" id="divisao">/</button>
+            <button class="operations" onclick="prompt_operation('subtracao')" id="subtracao">-</button>
+            <button class="operations" onclick="prompt_res()" id="resultado">=</button>
+        </section>
+    </main>
+
+
+
+    <script defer src="src/main.js" ></script>
+</body>
+</html>
