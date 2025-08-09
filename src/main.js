@@ -22,9 +22,10 @@ function prompt_operation(operation){
     let promtp = document.getElementById("prompt")
     switch(operation){
         case "soma":
+            console.log(number)
             promp_all.operation = "+"
             number = true
-
+            console.log(number)
             promtp.insertBefore(operation_icon, app)
             operation_icon.innerHTML = promp_all.operation
             break
@@ -41,6 +42,7 @@ function prompt_operation(operation){
             
             promtp.insertBefore(operation_icon, app)
             operation_icon.innerHTML = promp_all.operation
+            console.log(number)
             break
         case "subtracao":         
             promp_all.operation = "-"
@@ -60,7 +62,18 @@ function prompt_clean(){
     app.innerHTML = 0
     operation_icon.innerHTML = null
 }
+function clean_function(res){
+    promp_all.num1 = res
+    promp_all.operation = undefined
+    promp_all.num2 = " "
 
+    number = false;
+
+}
+function inner_operation_html(res){
+    app.innerHTML = res
+    operation_icon.innerHTML = null
+}
 function prompt_res(){
     let res = 0
     let num1 = parseFloat(promp_all.num1) 
@@ -70,26 +83,33 @@ function prompt_res(){
         case "+": 
             res=(num1+num2)
             console.log(res)
-            app.innerHTML = res
-            operation_icon.innerHTML = null
+            clean_function(res)
+            console.log(number)
+            inner_operation_html(res)
+
             break
         case "-":
             res=(num1-num2)
             console.log(res)
-            app.innerHTML = res
+            clean_function(res)
+            console.log(number)
+            inner_operation_html(res)
 
             break
-        case "*":
+        case "x":
             res=(num1*num2)
-            app.innerHTML = res
+            clean_function(res)
+            console.log(number)
+            inner_operation_html(res)
 
             console.log(res)
             break
         case "/":
             res=(num1/num2)
-            app.innerHTML = res
-
+            clean_function(res)
+            console.log(number)
             console.log(res)
+            inner_operation_html(res)
             break
     }
 
